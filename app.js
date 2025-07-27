@@ -1,6 +1,33 @@
 const apiKey = process.env.OPENAI_API_KEY;
 
-async function generatePost() {
+async function generatePost() 
+  
+{// ✅ عرض المعاينة للصورة أو الفيديو
+document.getElementById("mediaInput").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  const preview = document.getElementById("mediaPreview");
+  preview.innerHTML = "";
+
+  if (!file) return;
+
+  const type = file.type;
+  const url = URL.createObjectURL(file);
+
+  if (type.startsWith("image/")) {
+    const img = document.createElement("img");
+    img.src = url;
+    img.className = "w-full rounded mb-2";
+    preview.appendChild(img);
+  } else if (type.startsWith("video/")) {
+    const video = document.createElement("video");
+    video.src = url;
+    video.controls = true;
+    video.className = "w-full rounded mb-2";
+    preview.appendChild(video);
+  } else {
+    preview.textContent = "الملف غير مدعوم.";
+  }
+});
   const inputText = document.getElementById("inputText").value;
   const output = document.getElementById("output");
 
