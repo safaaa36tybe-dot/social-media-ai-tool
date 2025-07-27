@@ -7,6 +7,33 @@
     <title>AI Social Media Tool</title>
   </head>
   <body>
+    <body class="bg-gray-100 text-gray-900">
+  <div class="max-w-2xl mx-auto p-6">
+    <h1 class="text-2xl font-bold text-center mb-4">🧠 Social Media AI Tool | أداة الذكاء الاجتماعي</h1>
+
+    <label class="block mb-2 font-medium">📝 Write your idea or topic | اكتب فكرتك أو موضوع المنشور:</label>
+    <textarea id="inputText" rows="4" class="w-full p-3 border rounded mb-4" placeholder="مثال: إعلان منتج جديد 🎁..."></textarea>
+
+    <!-- ✅ إدخال رفع الصور والفيديوهات -->
+    <label class="block mb-2 font-medium">📤 اختر صورة أو فيديو (اختياري):</label>
+    <input type="file" id="mediaInput" accept="image/*,video/*" class="mb-4">
+
+    <!-- ✅ عرض المعاينة -->
+    <div id="mediaPreview" class="mb-6"></div>
+
+    <button onclick="generatePost()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full mb-4">
+      ✨ توليد منشور باستخدام الذكاء الاصطناعي | Generate Post
+    </button>
+
+    <label class="block mb-2 font-medium">📢 النتيجة | Resulted Post:</label>
+    <div id="output" class="bg-white p-4 border rounded min-h-[100px] mb-4"></div>
+
+    <button onclick="copyPost()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">
+      📋 نسخ المنشور | Copy Post
+    </button>
+  </div>
+  <script src="app.js"></script>
+</body>
     <h1 style="text-align:center">✍️ مرحبًا بك في أداة منشورات الذكاء الاصطناعي!</h1>
     <p style="text-align:center">النسخة الأولية — سيتم تطويرها مع الوقت</p>
   </body>
